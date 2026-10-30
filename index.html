@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Simran ❤️</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: 'Georgia', serif;
+  background: linear-gradient(135deg,#ffe0ec,#ffc1d5,#f8b8d0);
+  color: #8b1747;
+  text-align: center;
+}
+
+.container {
+  min-height: 100vh;
+  padding: 35px 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 440px;
+  padding: 30px 20px;
+  background: rgba(255,255,255,0.75);
+  border-radius: 28px;
+  box-shadow: 0 12px 35px #a72d5c30;
+  border: 2px solid white;
+}
+
+h1 {
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  font-size: 17px;
+  line-height: 1.7;
+  margin: 15px 0;
+}
+
+.cat {
+  font-size: 85px;
+  margin: 15px 0;
+  animation: bounce 2s infinite;
+}
+
+.roses {
+  font-size: 38px;
+  margin: 15px;
+  animation: sway 3s infinite;
+}
+
+@keyframes bounce {
+  50% { transform: translateY(-9px); }
+}
+
+@keyframes sway {
+  50% { transform: rotate(8deg); }
+}
+
+button {
+  border: none;
+  border-radius: 30px;
+  padding: 15px 25px;
+  margin: 10px 5px;
+  font-size: 16px;
+  background: #ed3977;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 5px 15px #ed397755;
+}
+
+button:active {
+  transform: scale(.94);
+}
+
+#message {
+  display: none;
+  margin-top: 22px;
+  line-height: 1.9;
+  font-size: 17px;
+  animation: appear 1s ease;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.heart {
+  position: fixed;
+  pointer-events: none;
+  animation: fly 2s forwards;
+  z-index: 10;
+}
+
+@keyframes fly {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(.5);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-220px) scale(1.8) rotate(30deg);
+  }
+}
+
+.footer {
+  font-size: 13px;
+  margin-top: 25px;
+  color: #a34c70;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <main class="card">
+
+    <div class="roses">🌹🌷🌹</div>
+
+    <h1>Hey Simran! ❤️</h1>
+
+    <p class="subtitle">
+      Mere soulmate ke liye ek chhota sa surprise... 💗    </p>
+
+    <div class="cat">🐱</div>
+
+    <div style="font-size:35px">
+      💐🌹💐
+    </div>
+
+    <p class="subtitle">
+      Ye chhoti si kitty tumhare liye dher saara pyaar aur kuch khoobsurat roses lekar aayi hai! 🐾 
+    </p>
+
+    <button onclick="showLove()">
+      Open Your Surprise 💌
+    </button>
+
+    <div id="message">
+
+      <h2>Meri Pyaari Simran ❤️</h2>
+
+      <p>
+        I know sometimes I make mistakes,
+        and I may not always express myself perfectly.
+        But one thing will never change...
+      </p>
+
+      <br>
+
+      <p>
+        You are special to me.
+       Tum meri life ka sirf ek hissa nahi ho, tum meri khushi ho, meri smile ho aur meri sabse favourite person ho. 🥺❤️
+
+
+      </p>
+
+     
+      <br>
+      
+  <h2>YOU ARE MY SOULMATE! 💍❤️</h2>
+  
+  <p>
+    Meri aaj bhi, meri kal bhi,
+    aur meri har aane wali khushi bhi tum ho. 🥹
+  </p>
+
+  <br>
+
+
+
+      <h2>I LOVE YOU, SIMRAN! 💗</h2>
+
+      <p>
+        Hamesha tumhara... ♾️
+      </p>
+
+      <div style="font-size:35px;margin-top:15px">
+        ❤️🫶🏻😘🌷
+      </div>
+
+    </div>
+
+    <button onclick="sendHearts()">
+      Tap for Love ❤️
+    </button>
+
+    <div class="footer">
+      Made with endless love, just for you Simran 💕
+    </div>
+
+  </main>
+</div>
+
+<script>
+function showLove() {
+  document.getElementById("message").style.display = "block";
+  sendHearts();
+}
+
+function sendHearts() {
+  const emojis = ["❤️","💖","💕","💗","🌹","💘","🥰"];
+
+  for(let i = 0; i < 15; i++) {
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+    heart.innerHTML =
+      emojis[Math.floor(Math.random() * emojis.length)];
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.top = (50 + Math.random() * 40) + "vh";
+    heart.style.fontSize = (20 + Math.random() * 25) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 2100);
+  }
+}
+
+// A heart appears wherever she taps!
+document.addEventListener("click", function(e) {
+  if(e.target.tagName !== "BUTTON") {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = e.clientX + "px";
+    heart.style.top = e.clientY + "px";
+    heart.style.fontSize = "25px";
+
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 2100);
+  }
+});
+</script>
+
+</body>
+</html>
